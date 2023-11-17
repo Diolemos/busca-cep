@@ -3,7 +3,13 @@ let display = document.querySelector(".result-display");
 let inputField = document.querySelector("input");
 
 const updateDisplay = (display, data) => {
-    display.innerText = JSON.stringify(data, null, 2);
+    // Display only specific properties in the HTML
+    display.innerHTML = `
+        <p><strong>Logradouro:</strong> ${data.logradouro}</p>
+        <p><strong>UF:</strong> ${data.uf}</p>
+        <p><strong>Bairro:</strong> ${data.bairro}</p>
+        <p><strong>Localidade:</strong> ${data.localidade}</p>
+    `;
 };
 
 async function getCep() {
@@ -19,10 +25,9 @@ searchBtn.addEventListener('click', async (e) => {
 
     // Check if the input value contains only numbers
     if (!/^\d+$/.test(inputField.value)) {
-        alert("Insira apenas números no cep");
+        alert("Please enter only numeric values for the CEP.");
         return;
     }
 
     await getCep();
 });
-
