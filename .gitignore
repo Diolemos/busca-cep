@@ -1,0 +1,2 @@
+# Ignore keys.py inside the static folder
+static/keys.py
