@@ -30,6 +30,74 @@
             </div>
             
         </li>
+        <!-- q2 -->
+        <li>
+            <div id="q-2" class="question">
+                <p>2. Escreva um algoritmo para encontrar três números consecutivos de um array que somados o resultado é igual a zero: 
+                    Input : array(-1,0,1,2,-1,-4); 
+                    Output : array([0] => -1 + 0 + 1 = 0);0 
+                    
+                    </p>
+            </div>
+            <div id="a-2" class="answer">
+                <pre><code class="language-javascript">
+                    const findNumWhichSumEqualsZero = (array) => {
+                      let counter = 0;
+                      let answer = [];
+                    
+                      for (let i = 0; i <= array.length - 3; i++) {
+                        if (array[i] + array[i + 1] + array[i + 2] === 0) {
+                          counter++;
+                          answer.push([array[i], array[i + 1], array[i + 2]]);
+                        }
+                      }
+                    
+                      counter
+                        ? console.log(`A sequência apresenta ${counter} combinações que resultam em zero`)
+                        : console.log(`A sequência não apresenta combinações que resultam em zero`);
+                    
+                      return answer;
+                    };
+                    
+                    console.log(findNumWhichSumEqualsZero([-1, 0, 1, 2, -1, -4]));
+                        </code></pre>
+            </div>
+            
+        </li>
+        <!-- q3 -->
+
+        <li>
+            <div id="q-3" class="question">
+                <p>3- Escreva um algoritmo para encontrar três números consecutivos de um array que somados o resultado é igual a um outro número fornecido: 
+                    Input : (array(2, 7, 7, 1, 8, 2, 7, 8, 7), 16)); 
+                    Output : array( 
+                    [0] => 2 + 7 + 7 = 16, 
+                    [1] => 7 + 1 + 8 = 16 
+                    ); 
+                    
+                    
+                    </p>
+            </div>
+            <div id="a-3" class="answer">
+                <pre><code class="language-javascript">
+                    function encontreTresNumeros(array, target) {
+                        let resposta = [];
+                      
+                        for (let i = 0; i <= array.length - 3; i++) {
+                          if (array[i] + array[i + 1] + array[i + 2] === target) {
+                            resposta.push([array[i], array[i + 1], array[i + 2]]);
+                          }
+                        }
+                      
+                        return resposta;
+                      }
+                      
+                      const resultado = encontreTresNumeros([2, 7, 7, 1, 8, 2, 7, 8, 7], 16);
+                      console.log(resultado);
+                        </code></pre>
+            </div>
+            
+        </li>
     </ul>
 </div>
 
