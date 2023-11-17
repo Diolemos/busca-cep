@@ -7,14 +7,19 @@
 
 {%block main %}
 
-    <form>
-        <input type="text" placeholder="Digite o cep..." maxlength="8">
-        <button>Buscar</button>
-    </form>
+<form method="post" action="/cep">
+    <input type="text" name="cep" placeholder="Digite o cep..." maxlength="8">
+    <button type="submit">Buscar</button>
+</form>
 
-    <div class="result-display"></div>
+<div class="result-display"></div>
 
- 
+<h2>Search History</h2>
+<ul>
+    {% for search in search_history %}
+        <li>{{ search.cep }}</li>
+    {% endfor %}
+</ul>
 
 
 {%endblock%}
