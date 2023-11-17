@@ -1,2 +1,2 @@
-# Ignore keys.py inside the static folder
-static/keys.py
+# Ignore keys.py files
+**/keys.py
